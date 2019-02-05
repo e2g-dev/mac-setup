@@ -1,4 +1,4 @@
-# jaedle`s mac-client setup
+# jaedle’s mac-client setup
 
 ## Credits
 
