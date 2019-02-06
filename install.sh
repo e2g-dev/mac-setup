@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-git clone https://github.com/jaedle/mac-setup ~/.mac-setup
+git clone https://github.com/e2g-dev/mac-setup ~/.mac-setup
 sh ~/.mac-setup/setup.sh
