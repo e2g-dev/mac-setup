@@ -66,8 +66,8 @@ install_brew_packages() {
 }
 
 install_ruby_packages() {
-    gem install mdl
-    gem install travis
+    gem install mdl --user-install
+    gem install travis --user-install
 }
  
 install_zsh_config() {
