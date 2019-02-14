@@ -18,6 +18,8 @@ install_brew_packages() {
     brew tap getantibody/tap
     brew tap git-duet/tap
     brew tap go-task/tap
+    brew tap phrase/brewed
+
     brew cask install corretto
 
     brew install \
@@ -32,7 +34,10 @@ install_brew_packages() {
         google-java-format \
         gradle \
         htop \
+        jq \
         maven \
+        nvm \
+        phraseapp \
         sonar-scanner \
         shellcheck \
         ssh-copy-id \
@@ -204,6 +209,18 @@ setup_bash_configuration() {
     path_of_repository="$( cd "$(dirname "$0")" ; pwd -P )"
     cp "$path_of_repository/.bash_profile" ~/.bash_profile
     chmod 0700 ~/.zshrc
+}
+
+setup_node() {
+    nvm install --lts
+    
+    mkdir ~/.nvm
+    
+    echo export NVM_DIR="$HOME/.nvm" >> ~/.bash_profile
+    echo [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" >> ~/.bash_profile
+    echo [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion" >> ~/.bash_profile
+    
+    brew install eslint # should be >= 5.7.0
 }
 
 install_and_update_homebrew
